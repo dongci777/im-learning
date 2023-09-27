@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    #运行的环境
+    active: test
+  application:
+    name: im
+  datasource:
+    url: jdbc:mysql://${im.mysql.ip}:${im.mysql.port}/${im.mysql.db}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${im.mysql.username}
+    password: ${im.mysql.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    # Redis服务器地址
+    host: ${im.redis.host}
+    # Redis服务器端口号
+    port: ${im.redis.port}
+    # 使用的数据库索引，默认是0
+    database: 0
+    # 连接超时时间
+    timeout: 1800000
+    # 设置密码
+    password: ${im.redis.password}
